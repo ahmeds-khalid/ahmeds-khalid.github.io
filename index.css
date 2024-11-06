@@ -222,14 +222,14 @@ b, .gradient{
     margin: 5px;
     background: linear-gradient(
         to right,
-        #e0b156,    /* Golden accent */
+        #dbbb7a,    /* Golden accent */
         #ecd2a1
     );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 300% auto;
-    animation: textShine 7s ease-in-out infinite alternate;
+    background-size: 200% auto;
+    animation: textShine 4s ease-in-out infinite alternate;
 }
 
 /* Skills section styles */
@@ -296,18 +296,31 @@ b, .gradient{
 /* Updated Projects section styles */
 /* Grid container for projects */
 #projects {
-    display: grid;
-    grid-template-columns: repeat(2, 0.1fr);
-    gap: 4rem;
-    justify-items: center;
-    align-items: center;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
+    padding-top: 10rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 2rem;  /* Reduce the gap between cards */
+    justify-items: center;
+    align-items: start;
+    width: 100%;
+}
+
+.section-divider {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 2rem 0;
+    margin: 2rem 0;
 }
 
 .card {
-    --blur: 16px;
-    --size: clamp(200px, 55vmin, 400px);
-    width: var(--size);
+    width: 100%;
+    max-width: 400px;
     aspect-ratio: 4 / 3.5;
     position: relative;
     border-radius: 2rem;
@@ -315,7 +328,13 @@ b, .gradient{
     color: #000;
     transform: translateZ(0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    align-tracks: center;
+    transition: transform 0.3s ease;
+    padding: 0; /* Remove internal padding to decrease space between sides */
+    margin: 1rem;
+}
+
+.card:hover {
+    transform: translateZ(0) scale(1.03);
 }
 
 .card__img {
@@ -328,6 +347,7 @@ b, .gradient{
 }
 
 .card__footer {
+    --blur: 5px;
     padding: 0 1.5rem;
     position: absolute;
     bottom: 0;
@@ -345,14 +365,14 @@ b, .gradient{
 }
 
 .card__action {
+    --size: 300px;
     position: absolute;
-    aspect-ratio: 1;
-    width: calc(var(--size) * 0.15);
-    bottom: 30%;
+    aspect-ratio: 1; /* Maintain square shape */
+    width: calc(var(--size) * 0.2); /* Increase size */
+    height: calc(var(--size) * 0.2); /* Adjust height too if necessary */
+    bottom: 0%;
     right: 1.5rem;
-    transform: translateY(50%)
-        translateY(calc((var(--size) * 0.4)))
-        translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
+    transform: translateY(-120%) translateY(calc((var(--size) * 0.5))) translateY(calc(var(--hover, 0) * (var(--size) * -0.5)));
     background: rgba(255, 255, 255, 0.2);
     display: grid;
     place-items: center;
@@ -367,7 +387,7 @@ b, .gradient{
 }
 
 .card__footer span:nth-of-type(1) {
-    font-size: calc(var(--size) * 0.065);
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -466,6 +486,36 @@ button:hover {
     text-align: center;
 }
 
+.projects-divider-container {
+    width: 100%;
+    padding: 2rem 0;
+    grid-column: 1 / -1;
+}
+
+.projects-divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 1rem;
+}
+
+.divider-line {
+    flex: 1;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.divider-text {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0 1rem;
+    opacity: 0.8;
+}
+
+
 /* Mobile styles */
 @media screen and (max-width: 768px) {
     #projects {
@@ -474,8 +524,22 @@ button:hover {
         gap: 3rem;
     }
 
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 1rem; /* Adjust gap for mobile */
+    }
+
     .card {
-        --size: clamp(200px, 70vmin, 400px);
+        --size: clamp(300px, 80vmin, 600px);
+        width: 375px;
+    }
+
+    .divider-text {
+        font-size: 1.2rem;
+    }
+
+    .projects-divider {
+        gap: .1rem;
     }
 
     .toggle-buttons {
