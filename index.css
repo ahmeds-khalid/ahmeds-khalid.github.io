@@ -14,11 +14,21 @@ html {
 body {
     font-family: "Rubik", sans-serif;
     line-height: 1.6;
-    background-color: #1c1d22;
+    /* background-color: #1c1d22; */
     color: #fff;
     overflow-x: hidden;
     max-width: 100%;
     position: relative;
+
+    background: linear-gradient(
+        180deg,
+        #124d86 0vh,
+        #af8149 51vh,
+        #fffed1 51vh,  /* Start #fffed1 immediately at 51vh */
+        #fffed1 52vh,  /* Shortened #fffed1 to end at 52vh */
+        #a25e4e 52vh,  /* Start #a25e4e immediately at 52vh */
+        #1b1d23 95vh
+      );
 }
 
 header {
@@ -80,19 +90,6 @@ section {
     width: 100%;
 }
 
-.parallax-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background-image: url('intro.png'); */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.2;
-    z-index: -1;
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 7px;
@@ -115,10 +112,11 @@ section {
 }
 
 #particles-js {
-    position: fixed;
+    position: absolute;
+    margin-top: 50vh;
     width: 100%;
-    height: 100%;
-    z-index: 0;
+    height: 100vh; /* Default height */
+    z-index: -1;
 }
 
 .content {
@@ -131,6 +129,7 @@ h1 {
     font-size: 4rem;
     margin-bottom: 0.5rem;
     animation: fadeInUp 1s ease-out;
+    position: relative;
 }
 
 h2 {

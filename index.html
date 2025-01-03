@@ -12,7 +12,7 @@
     <title>Ahmed Khalid - Portfolio</title>
 </head>
 <body oncontextmenu="return false">
-    <div id="particles-js"></div>
+     <div id="particles-js"></div> <!-- this one right here <---- -->
     <header>
         <nav>
             <a href="#home">Home</a>
@@ -22,10 +22,15 @@
         </nav>
     </header>
     <main>
-        <div class="parallax-bg"></div>
+        <!-- <div class="parallax-bg"></div> -->
+
+        <div class="headergradient" style="position: absolute;">
+            <!-- <h1>test</h1> -->
+        </div>
+
         
         <section id="home" class="content">
-            <h1>Ahmed Khalid.</h1>
+            <h1 id="target">Ahmed Khalid.</h1>
             <div class="ms-slider">
                 <!-- This last word needs to duplicate the first one to ensure a smooth infinite animation -->
                 <ul class="ms-slider__words">
@@ -86,5 +91,6 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
     <script type="module" src="index.js"></script>
 </html>
