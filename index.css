@@ -12,7 +12,9 @@ html {
 }
 
 body {
-    font-family: "Rubik", sans-serif;
+    font-family: "Barlow", serif;
+    font-weight: 500;
+    font-style: normal;
     line-height: 1.6;
     /* background-color: #1c1d22; */
     color: #fff;
@@ -130,6 +132,8 @@ h1 {
     margin-bottom: 0.5rem;
     animation: fadeInUp 1s ease-out;
     position: relative;
+    font-family: "Barlow", serif;
+    font-weight: 900;
 }
 
 h2 {
