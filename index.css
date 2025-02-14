@@ -891,30 +891,3 @@ a.fill-div {
   padding: 2rem;
   margin-bottom: 7rem;
 }
-
-.variable-button
-{
-  position: relative;
-  background: transparent;
-  color: #FFF;
-  border: 1px solid #27272a;
-  padding: 1rem 2.5rem;
-  border-radius: 5px;
-  transition: .4s;
-  max-width: 15rem;
-  min-height: 4.5rem;
-}
-.variable-button::before
-{
-  content: attr(data-text);
-}
-.variable-button:hover
-{
-  background: rgb(220, 220, 220);
-  color: black;
-  transition: .4s;
-}
-.variable-button:hover::before
-{
-  content: attr(data-texthover);
-}
