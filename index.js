@@ -53,7 +53,6 @@ ctrl.addBinding(config, 'theme', {
   label: 'Theme',
   options: {
     System: 'system',
-    Light: 'light',
     Dark: 'dark',
   },
 })
