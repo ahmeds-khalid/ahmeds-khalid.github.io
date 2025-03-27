@@ -5,7 +5,7 @@ import gsap from 'https://cdn.skypack.dev/gsap@3.12.0'
 import ScrollTrigger from 'https://cdn.skypack.dev/gsap@3.12.0/ScrollTrigger'
 
 const config = {
-  theme: 'light',
+  theme: 'dark',
   start: gsap.utils.random(0, 100, 1),
   end: gsap.utils.random(900, 1000, 1),
   scroll: true,
